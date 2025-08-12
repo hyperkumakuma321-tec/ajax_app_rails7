@@ -1,5 +1,6 @@
 function post (){
- const form = document.getElementById("form");
+  const form = document.getElementById("form");
+
  form.addEventListener("submit", (e) => {
   e.preventDefault();
   const formData = new FormData(form);
