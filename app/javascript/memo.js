@@ -8,6 +8,18 @@ function post (){
   XHR.open("POST", "/posts", true);
   XHR.responseType = "json";
   XHR.send(formData);
+  XHR.onload = () => {
+    const item = XHR.response.post;
+      const html = `
+        <div class="post">
+          <div class="post-date">
+            投稿日時：${item.created_at}
+          </div>
+          <div class="post-content">
+            ${item.content}
+          </div>
+        </div>`;
+    };
   });
 };
 
